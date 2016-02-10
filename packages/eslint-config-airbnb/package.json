@@ -1,11 +1,12 @@
 {
   "name": "eslint-config-airbnb",
-  "version": "2.0.0",
+  "version": "5.0.0",
   "description": "Airbnb's ESLint config, following our styleguide",
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",
-    "test": "babel-tape-runner ./test/test-*.js"
+    "tests-only": "babel-tape-runner ./test/test-*.js",
+    "test": "parallelshell 'npm run lint' 'npm run tests-only'"
   },
   "repository": {
     "type": "git",
@@ -38,10 +39,11 @@
   "homepage": "https://github.com/airbnb/javascript",
   "devDependencies": {
     "babel-tape-runner": "1.2.0",
-    "eslint": "^1.8.0",
-    "eslint-plugin-react": "^3.7.1",
-    "react": "^0.13.3",
-    "tape": "^4.2.2"
+    "eslint": "^1.10.3",
+    "eslint-plugin-react": "^3.16.1",
+    "react": "^0.14.7",
+    "tape": "^4.4.0",
+    "parallelshell": "^2.0.0"
   },
   "peerDependencies": {
     "eslint": ">=1.0.0"

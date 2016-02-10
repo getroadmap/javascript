@@ -3,11 +3,11 @@ module.exports = {
     // enforce spacing inside array brackets
     'array-bracket-spacing': [2, 'never'],
     // enforce one true brace style
-    'brace-style': [2, '1tbs', {'allowSingleLine': true }],
+    'brace-style': [2, '1tbs', { 'allowSingleLine': true }],
     // require camel case names
-    'camelcase': [2, {'properties': 'never'}],
+    'camelcase': [2, { 'properties': 'never' }],
     // enforce spacing before and after comma
-    'comma-spacing': [2, {'before': false, 'after': true}],
+    'comma-spacing': [2, { 'before': false, 'after': true }],
     // enforce one true comma style
     'comma-style': [2, 'last'],
     // disallow padding inside computed properties
@@ -20,23 +20,31 @@ module.exports = {
     'func-names': 1,
     // enforces use of function declarations or expressions
     'func-style': 0,
-    // this option enforces minimum and maximum identifier lengths (variable names, property names etc.)
+    // this option enforces minimum and maximum identifier lengths
+    // (variable names, property names etc.)
     'id-length': 0,
     // this option sets a specific tab width for your code
     // https://github.com/eslint/eslint/blob/master/docs/rules/indent.md
-    'indent': [2, 2, { "SwitchCase": 1, "VariableDeclarator": 1 }],
+    'indent': [2, 2, { 'SwitchCase': 1, 'VariableDeclarator': 1 }],
     // specify whether double or single quotes should be used in JSX attributes
-    'jsx-quotes': 2,
+    // http://eslint.org/docs/rules/jsx-quotes
+    'jsx-quotes': [2, 'prefer-double'],
     // enforces spacing between keys and values in object literal properties
-    'key-spacing': [2, {'beforeColon': false, 'afterColon': true}],
+    'key-spacing': [2, { 'beforeColon': false, 'afterColon': true }],
     // enforces empty lines around comments
     'lines-around-comment': 0,
     // disallow mixed 'LF' and 'CRLF' as linebreaks
     'linebreak-style': 0,
+    // specify the maximum length of a line in your program
+    // https://github.com/eslint/eslint/blob/master/docs/rules/max-len.md
+    'max-len': [2, 100, 2, {
+      'ignoreUrls': true,
+      'ignoreComments': false
+    }],
     // specify the maximum depth callbacks can be nested
     'max-nested-callbacks': 0,
     // require a capital letter for constructors
-    'new-cap': [2, {'newIsCap': true}],
+    'new-cap': [2, { 'newIsCap': true }],
     // disallow the omission of parentheses when invoking a constructor with no arguments
     'new-parens': 0,
     // allow/disallow an empty newline after var statement
@@ -52,7 +60,7 @@ module.exports = {
     // disallow mixed spaces and tabs for indentation
     'no-mixed-spaces-and-tabs': 2,
     // disallow multiple empty lines and only one newline at the end
-    'no-multiple-empty-lines': [2, {'max': 2, 'maxEOF': 1}],
+    'no-multiple-empty-lines': [2, { 'max': 2, 'maxEOF': 1 }],
     // disallow nested ternary expressions
     'no-nested-ternary': 2,
     // disallow use of the Object constructor
@@ -66,7 +74,9 @@ module.exports = {
     // disallow dangling underscores in identifiers
     'no-underscore-dangle': 0,
     // disallow the use of Boolean literals in conditional expressions
-    'no-unneeded-ternary': 0,
+    // also, prefer `a || b` over `a ? a : b`
+    // http://eslint.org/docs/rules/no-unneeded-ternary
+    'no-unneeded-ternary': [2, { 'defaultAssignment': false }],
     // require padding inside curly braces
     'object-curly-spacing': [2, 'always'],
     // allow just one var statement per function
@@ -78,13 +88,14 @@ module.exports = {
     // enforce padding within blocks
     'padded-blocks': [2, 'never'],
     // require quotes around object literal property names
-    'quote-props': 0,
+    // http://eslint.org/docs/rules/quote-props.html
+    'quote-props': [2, 'as-needed', { 'keywords': false, 'unnecessary': true, 'numbers': false }],
     // specify whether double or single quotes should be used
     'quotes': [2, 'single', 'avoid-escape'],
     // require identifiers to match the provided regular expression
     'id-match': 0,
     // enforce spacing before and after semicolons
-    'semi-spacing': [2, {'before': false, 'after': true}],
+    'semi-spacing': [2, { 'before': false, 'after': true }],
     // require or disallow use of semicolons instead of ASI
     'semi': [2, 'always'],
     // sort variables within the same declaration block
